@@ -1,1 +1,1 @@
-# arquivos-css
+# arquivos-css. Formatações pré-definidas
