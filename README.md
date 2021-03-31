@@ -1,1 +1,1 @@
-# arquivos-css. Formatações pré-definidas
+# arquivos, Classes,  bibliotecas dentre outras otimizações
