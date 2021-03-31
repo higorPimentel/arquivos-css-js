@@ -1,0 +1,16 @@
+Url = "http://jogosvba.online"
+
+
+ Set Myrequest = CreateObject("WinHttp.WinHttpRequest.5.1")
+    
+    Myrequest.SetTimeouts 5000, 5000, 1000, 1000
+    Myrequest.Open "GET", Url, False
+    
+
+    Call Myrequest.send
+          Myrequest.Status
+          
+         
+ 
+   
+   retorno = Myrequest.ResponseText

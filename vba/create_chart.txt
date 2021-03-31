@@ -1,0 +1,27 @@
+Sub executa()
+Dim cht As Chart
+Dim rng As Range
+
+
+
+Set rng = Range("A1:B9")
+
+x = rng.Height
+
+rng.CopyPicture xlScreen, xlBitmap
+
+
+'propriedades x,y,largura,altura
+Set cht = ActiveSheet.ChartObjects.Add(0, 0, rng.Width, rng.Height).Chart
+
+
+With cht
+    .Paste
+    .Export "C:\Users\mcl\Desktop\img_export.jpg"
+    
+    
+End With
+
+Set cht = Nothing
+    
+end sub
