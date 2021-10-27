@@ -21,7 +21,7 @@
 		})
 
 
-/*
+/* READ FILE - PHP
 $file = $_FILES["arquivo"];
 move_uploaded_file($file["tmp_name"], "$dir_destino/".$file["name"]);
 //processando o arquivo
