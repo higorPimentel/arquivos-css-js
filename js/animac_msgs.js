@@ -1,10 +1,10 @@
 
 /*
-
->>>>>>>>>>>>>  DEFINE index_msg_execucao <<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>  Execução erro <<<<<<<<<<<<<<<<<<<<<<<<<<<
         
-index_msg_erro = -500
-index_msg_erro_desabilit = 30
+        index_msg_erro = -500
+        $('#msg_erro').html('Menssagem Erro')
+        exibe_erro()
 
 */
 
