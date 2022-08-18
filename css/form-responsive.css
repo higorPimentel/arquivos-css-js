@@ -173,7 +173,7 @@ width:100%;
     z-index: 4;
 }
 
-frmt_tabela_fretes {
+.frmt_tabela_fretes {
   border:solid 2px lightgray;
   border-bottom: 3px groove lightgray;       
   margin-top:50px ;
