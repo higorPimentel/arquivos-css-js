@@ -1,3 +1,19 @@
+/*
+
+>>>>>>>>>>>>>>>>>>>>>>>>> ESTRUTURA DA TABELA <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+			     <div  class="row">	
+                            <div class="grupo_cxs col-6 grupo_table" id="grupo_cx_id">
+                            
+                                <div class='container_table'>
+                                        <table id='table_list'  class='frmt_tabela_fretes'>                                            
+                                        </table>
+                                </div>
+                            </div>
+                    </div>
+
+*/
+
 function mont_table(){
 
 

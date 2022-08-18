@@ -173,6 +173,58 @@ width:100%;
     z-index: 4;
 }
 
+frmt_tabela_fretes {
+  border:solid 2px lightgray;
+  border-bottom: 3px groove lightgray;       
+  margin-top:50px ;
+  border-radius: 30px;
+  width:100%;
+  
+}
+  
+.frmt_tabela_fretes th {
+  background-color: rgba(46, 46, 54, 0.295);
+  font-weight: bold;
+  color:#6d6363;
+  padding:8px 40px;
+  font-size: 13px;
+  
+}
+  
+.frmt_tabela_fretes td { 
+  text-align: center;
+  padding-top:10px;
+  padding-bottom:10px;	
+  font-size: 15px;
+  cursor:pointer;
+}
+  
+
+.frmt_tabela_fretes tr:hover{
+  background-color:rgba(240,240,240,1);  
+}
+
+  
+  
+.styline_line_table_2{
+  background-color:rgb(248, 248, 248);
+      
+}
+
+.container_table{
+  margin: 10px 20px;	
+  display:block;
+  overflow:auto;
+  border:solid 1px rgb(231, 228, 228);
+  border-radius:5px;
+  /* background-color:rgb(255, 255, 255);  */
+  background-color:rgb(228, 228, 228); 
+  width: 100%;
+  padding: 20px;
+
+}
+
+
 @media(max-width: 750px){
 
 .grupo_cxs{
