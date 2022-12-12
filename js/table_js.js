@@ -2,7 +2,9 @@
 
 >>>>>>>>>>>>>>>>>>>>>>>>> ESTRUTURA DA TABELA <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
+
 			     <div  class="row">	
+					<div class='vlr_tit_list'></div>
                             <div class="grupo_cxs col-6 grupo_table" id="grupo_cx_id">
                             
                                 <div class='container_table'>
@@ -12,10 +14,15 @@
                             </div>
                     </div>
 
+
+
 */
+
 
 function mont_table(){
 
+
+	
 
 	var cod = 1	
 	let itm = 0
@@ -32,8 +39,12 @@ function mont_table(){
 	
 	 tbl +='</tr>'
 	
-	
-	for(let i = 0; i < dados_table_load.length; i++) {
+	/*
+	* DADOS VEM APARTIR DE UMA REQUISIÇÃO. PRO EXEMPLO ABAIXO FOI SETADO EM 10 
+	*/
+	//for(let i = 0; i < dados_table_load.length; i++) {
+
+	for(let i = 0; i < 10; i++) {
 
 				if (cod === 3) {
 					cod = 1
@@ -47,9 +58,11 @@ function mont_table(){
 				}
 
 			tbl +=`<tr>`
-			tbl +=`<td id=it${i}>${dados_table_load[i].Field}</td>`
-			tbl +=`<td id=it${i}>${dados_table_load[i].Tabela}</td>`
-			tbl +=`<td id=it${i}>${dados_table_load[i].Type}</td>`
+			//tbl +=`<td id=it${i}>${dados_table_load[i].Field}</td>`
+			tbl +=`<td id=it${i}>Valor ${[i]}</td>`
+			tbl +=`<td id=it${i}>Valor ${[i]}</td>`
+			tbl +=`<td id=it${i}>Valor ${[i]}</td>`
+
 			
 		
 	
@@ -63,9 +76,19 @@ function mont_table(){
 
 	}
 
-	
-	$('#table_list').html(tbl);
-	$('.vlr_tit_list').html(itm);
+
+ let table = document.querySelector('#table_list')
+ let vl_item = document.querySelector('.vlr_tit_list')
+ 
+ 
+ table.innerHTML = tbl
+ vl_item.innerHTML = 'Total de Registros - ' + itm
+
+
+
+	//   UTILIZANDO JQUERY 	
+	//$('#table_list').html(tbl);
+    //$('.vlr_tit_list').html('Total de Registros - ' + itm);
 	
 
 }
