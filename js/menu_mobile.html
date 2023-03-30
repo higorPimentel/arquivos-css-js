@@ -1,0 +1,125 @@
+
+
+<style>
+
+.container_menu_mob {
+    width: 35px;
+   padding: 2px;
+   margin-top: 80px;   
+   border-radius: 3px;
+   font-size: 30px;
+   position: absolute;
+   cursor: pointer;
+   color:  #e2aa22;
+}
+
+.container_menu_mob:hover {
+    transition: 0.5s;
+    background-color: rgba(255, 255, 255, 0.212);
+}
+
+.trc_itm {
+   margin-top: 8px;
+   margin-bottom: 8px;    
+   height: 2px;
+   background-color: #e2aa22;
+}
+
+.itm_x {
+   padding: 2px 10px;
+   display: none;
+}
+
+.container_opc_menu_mob{
+    margin-top: -15px;
+    background-color: #ffffff;
+    border-bottom:2px solid #e2a822a6;
+    display: none;
+    /* height: 250px; */
+}
+</style>
+
+<div class='container_menu_mob'>
+    <div  id='trc_itm_1' class='trc_itm'></div>
+    <div  id='trc_itm_2' class='trc_itm'></div>
+    <div  id='trc_itm_3' class='trc_itm'></div>
+</div>
+
+<div class='container_opc_menu_mob'>
+        <ul class='nav_header'>
+            <a class='opcs_header_mob' id ='opc_home' href="home"><li>Home</li></a> 
+            <a class='opcs_header_mob' id ='opc_sobre' href="sobre"><li>Nossa História</li></a>                               
+        </ul>
+</div>
+
+
+<script>
+
+    window.addEventListener('load',inicia_app)
+
+
+    let container_menu_mob = document.querySelector('.container_menu_mob');
+        container_menu_mob.addEventListener('click', exib_menu)
+
+
+function inicia_app() {
+
+    valid_exib_menu = 0;
+
+}    
+
+function exib_menu() {
+
+
+    valid_exib_menu ++
+    let el1 = document.getElementById('trc_itm_1');
+    let el2 = document.getElementById('trc_itm_2');
+    let el3 = document.getElementById('trc_itm_3');
+
+
+    if (valid_exib_menu == 1 ) {      
+
+        // JQUERY
+       // $("#trc_itm_1").css("position","relative")
+       
+        // JAVASCRIPT     
+       
+        el1.style.transform = "rotate(45deg)"
+        el1.style.transition = "0.5s"
+        el1.style.top= "12px"
+
+        el3.style.position = "relative"
+        el3.style.transform = "rotate(-45deg)"
+        el3.style.transition = "0.5s"
+        el3.style.top= "-20px"
+        el2.style.visibility = "hidden"
+
+        
+        indx_menu_mobile = 1
+        indx_menu_mobile2 = 250
+        //$(".container_opc_menu_mob").css("display","block")
+        //exibe_opc_mobile()
+        
+    } else if (valid_exib_menu > 1) {
+        
+
+        el1.style.transform = "rotate(0deg)"
+        el1.style.transition = "0.5s"
+        el1.style.top= "0px"
+
+        el3.style.position = "relative"
+        el3.style.transform = "rotate(0deg)"
+        el3.style.transition = "0.5s"
+        el3.style.top= "0px"
+
+        el2.style.visibility = "visible"
+
+
+        
+        valid_exib_menu = 0
+
+    }
+
+}
+
+</script>
