@@ -30,9 +30,9 @@
    display: none;
 }
 
-.container_opc_menu_mob{
-    margin-top: -15px;
-    background-color: #ffffff;
+#container_opc_menu_mob{
+    margin-top: 0px;
+    background-color: #a1a0e0;
     border-bottom:2px solid #e2a822a6;
     display: none;
     /* height: 250px; */
@@ -45,7 +45,7 @@
     <div  id='trc_itm_3' class='trc_itm'></div>
 </div>
 
-<div class='container_opc_menu_mob'>
+<div id='container_opc_menu_mob'>
         <ul class='nav_header'>
             <a class='opcs_header_mob' id ='opc_home' href="home"><li>Home</li></a> 
             <a class='opcs_header_mob' id ='opc_sobre' href="sobre"><li>Nossa História</li></a>                               
@@ -81,7 +81,7 @@ function exib_menu() {
 
         // JQUERY
        // $("#trc_itm_1").css("position","relative")
-       
+
         // JAVASCRIPT     
        
         el1.style.transform = "rotate(45deg)"
@@ -97,8 +97,8 @@ function exib_menu() {
         
         indx_menu_mobile = 1
         indx_menu_mobile2 = 250
-        //$(".container_opc_menu_mob").css("display","block")
-        //exibe_opc_mobile()
+        document.getElementById('container_opc_menu_mob').style.display = 'block'
+       exibe_opc_mobile()
         
     } else if (valid_exib_menu > 1) {
         
@@ -113,13 +113,64 @@ function exib_menu() {
         el3.style.top= "0px"
 
         el2.style.visibility = "visible"
-
-
         
         valid_exib_menu = 0
+        indx_menu_mobile = 1
+        indx_menu_mobile2 = 100
+        document.getElementById('opc_home').style.display = 'none'
+        document.getElementById('opc_sobre').style.display = 'none'
+        inibe_opc_mobile()
 
     }
 
 }
+
+function inibe_opc_mobile() {    
+
+
+
+if(indx_menu_mobile2 < 0) {
+    document.getElementById('container_opc_menu_mob').style.display = 'none'
+    return
+}
+
+
+document.getElementById('container_opc_menu_mob').style.height = indx_menu_mobile2 + 'px'
+setTimeout(() => {
+    next_loop7()  
+    }, 10); 
+
+}
+
+
+function exibe_opc_mobile() {    
+
+
+if(indx_menu_mobile > 100) {
+    document.getElementById('opc_home').style.display = 'block'
+    document.getElementById('opc_sobre').style.display = 'block'
+    return
+}
+
+
+document.getElementById('container_opc_menu_mob').style.height = indx_menu_mobile + 'px'
+setTimeout(() => {
+    next_loop7()  
+    }, 10); 
+
+}
+
+function next_loop7() {
+
+if(valid_exib_menu ==1) {
+    indx_menu_mobile = indx_menu_mobile + 10
+    exibe_opc_mobile()
+} else {
+    indx_menu_mobile2 = indx_menu_mobile2 - 10
+    inibe_opc_mobile()
+}    
+
+}
+
 
 </script>
