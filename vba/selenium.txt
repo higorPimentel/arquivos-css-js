@@ -1,0 +1,29 @@
+download selenium
+https://github.com/florentbr/SeleniumBasic/releases/tag/v2.0.9.0
+
+download chrome driver (Verificar compatibilidade entre navegador e driver) 
+https://chromedriver.chromium.org/home
+	> salvar em
+		> C:\Users\usuario\AppData\Local\SeleniumBasic	
+
+
+REFERENCIAS VBA
+ > Selenium Type Library
+
+------------------------------------------------------------------------------
+Sub executa_selenium()
+Dim nav As New Selenium.ChromeDriver
+Dim element As Selenium.WebElement
+
+urlRel = "https://www.google.com/"
+
+
+ nav.Get urlRel
+ nav.FindElementById("APjFqb").SendKeys ("Pesqusisa")
+ nav.FindElementByName("btnK").Click
+
+
+'Segura execução
+MsgBox "Finalizado", vbInformation, "..."
+
+End Sub
