@@ -1,0 +1,7 @@
+> ao iniciar, tela bios, pressione 'e'
+> Tela GNU GRUB, acessar linha kernel ( linux  /boot/vmlinuz-3), substituir "ro quiet splash", por, "rw init=/bin/bash". (enter)
+> mover o cursor pra texto linux, dar um boot (Ctrl-x ou F10).
+> Será logado no terminal no modo root. 
+> cmd = passwd (usuario), pra alterar a senha do usuario.
+> cmd = sync, pra salvar as alterações.
+> cmd = reboot -f
