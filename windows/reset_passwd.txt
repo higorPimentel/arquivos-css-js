@@ -1,0 +1,16 @@
+***  Alterar Facilitador de acesso pelo cmd
+	> Acessar soluções de problemas
+	> Opções Avançadas
+	> cmd
+	> verificar qual dico windows está instalado ( C: | d: | e: )
+	> acessar pasta - windows/system32
+	> renomear Facilitador de acesso - windows/system32>ren utilman.exe utilman_old.exe
+	> substituir cmd - windows/system32>copy cmd.exe utilman.exe
+** Fazer boot - acessar opão facilidade de acesso no login
+	> gerar novo usuario( usuario/senha) - net user teste 123 /add
+	> exibir info usuario - net user teste
+	> incluir usuario administrador - net localgroup administradores teste /add
+** log novo usuario
+	> wind + r - executar cmd 'control userpasswords2', pra alterar uma senha
+	> 
+	
