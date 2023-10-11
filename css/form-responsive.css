@@ -15,8 +15,14 @@
             </div>
       </form>
 
+      >>>>> OPÇÃO, FRM CENTRALIZADO 
+         <div class="row_center">
+         </div>
+
 
 ************** Form Centralizado  **************
+
+
        <form class="frm_center">
           <div class='bloco_center'><p>Bloco 1</p></div>
           <div class='bloco_center'><p>Bloco 2</p></div>
@@ -114,7 +120,11 @@ margin-left: -40px;
 }
 
 .row{
-width:100%;
+  width:100%;
+}
+
+.row_center {
+  text-align: center;
 }
 
 .col-1 {
