@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>
+        <label>Combo Teste</label>
+            <select id="estado" name="estado">
+            </select>
+    </div>
+    
+</body>
+
+<script>
+
+	
+
+
+    window.addEventListener('load',iniciaHome)
+
+
+    function iniciaHome() {
+
+        var combouf = document.getElementById("estado")
+        loadObjEstado()
+        
+        for ( var i = 0; i < objEstado.length ; i ++) {	
+    			
+				var opt0 = document.createElement("option");
+				opt0.value = [i]
+				opt0.text = objEstado[i].uf
+				combouf.add(opt0, combouf.options[0]);
+		
+			}
+
+
+
+    }
+
+
+function loadObjEstado() {
+
+        objEstado = [ {
+            id:1,
+            uf:'ES',
+            regiao:'sudeste'
+        },
+        {
+            id:2,
+            uf:'MG',
+            regiao:'sudeste'
+        },
+        {
+            id:3,
+            uf:'RJ',
+            regiao:'sudeste'
+        },
+        {
+            id:4,
+            uf:'SP',
+            regiao:'sudeste'
+        },
+        {
+            id:5,
+            uf:'PR',
+            regiao:'sul'
+        },
+        {
+            id:6,
+            uf:'SC',
+            regiao:'sul'
+        },
+        {
+            id:7,
+            uf:'RS',
+            regiao:'sul'
+        }
+    ]
+}
+
+
+</script>
+</html>
