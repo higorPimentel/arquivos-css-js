@@ -1,0 +1,33 @@
+Sub geraLogUnifilar()
+ Dim fileLog As String
+ Dim Arquivo As Integer
+ Dim infoData As String
+        
+
+    
+        Call defPath
+    
+      fileLog = "logUnifilar.log"
+      pathLog = pathLog + "\" + fileLog
+  
+    
+
+    infoIdREG = id_pdf
+    infoIdProj = lb_id
+    infoTipDiagrama = tip_diagrama
+    infoData = VBA.Now
+    
+    textLog = infoIdREG & "|"
+    textLog = textLog + infoIdProj & "|"
+    textLog = textLog + infoTipDiagrama & "|"
+    textLog = textLog + infoData
+    
+    
+
+    Arquivo = FreeFile
+    Open pathLog For Append As #Arquivo
+        Print #Arquivo, textLog
+    Close #Arquivo
+    
+    
+End Sub
