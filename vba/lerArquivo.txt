@@ -1,0 +1,13 @@
+file = Cells(3, 4)
+
+Open file For Input As #1
+    lin = 1
+
+    Do Until EOF(1)
+        Line Input #1, valorLin
+        Cells(lin, 1).Value = valorLin
+        lin = lin + 1
+
+    Loop
+
+Close #1
