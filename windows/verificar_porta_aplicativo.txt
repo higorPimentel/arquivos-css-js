@@ -1,0 +1,4 @@
+# Listar Processos - PID
+    > netstat -ano
+#Pesquisar processo pelo PID (Exemplo 1234)
+    > tasklist /FI "PID eq 1234"
