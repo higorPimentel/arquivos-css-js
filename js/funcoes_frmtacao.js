@@ -1,5 +1,31 @@
 
+// OPÇÃO 1  - FORMATAÇÃO NA DIGITAÇÃO
 
+
+
+function frmtTel(e) {
+    e.target.value = frmt_fone(e.target.value);
+}
+
+function frmt_fone(vlr){
+
+    //(99)99999-9999    
+    vlr = vlr.replace(/\D/g, "");
+    vlr = vlr.substring(0,11)
+            
+    vlr = vlr.replace(/(\d{0})(\d)/, "$1($2");
+    vlr = vlr.replace(/(\d{2})(\d)/, "$1)$2");
+    vlr = vlr.replace(/(\d{5})(\d)/, "$1-$2");
+
+     return vlr
+
+}
+
+
+
+
+
+// OPÇÃO 2  - OUTROs TIPO
 
 function frmt_cpf(vlr){
 
