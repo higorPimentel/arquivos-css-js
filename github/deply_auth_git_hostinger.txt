@@ -1,0 +1,12 @@
+> Hostinger
+ - Acessar servidor / Avançado / GIT
+ - Repositorio privado, gerar SSH
+    - campo repositorio - definir url repositorio com SSH    
+    - campo ramo - main
+    - campo diretorio - deixar em branco
+    - Opção implantação automatica, obter WEBHOOK URL
+
+> Github
+- Definir chave. Acessar settings
+- SSH and GPG keys, inserir SSH gerado na hostinger
+- Acessar repositorio, settings, Webhooks
