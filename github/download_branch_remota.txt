@@ -1,0 +1,9 @@
+- Liste todas as branches remotas disponíveis:
+	> git fetch --all
+	> git branch -r
+
+- COPIAR BRANCH REMOTA 
+	> git fetch origin branch:branch
+
+- FAZER O GIT PULL
+	> git pull origin (nome_da_branch)

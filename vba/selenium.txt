@@ -3,6 +3,10 @@ https://github.com/florentbr/SeleniumBasic/releases/tag/v2.0.9.0
 
 download chrome driver (Verificar compatibilidade entre navegador e driver) 
 https://chromedriver.chromium.org/home
+
+link download
+https://googlechromelabs.github.io/chrome-for-testing/
+
 	> salvar em
 		> C:\Users\usuario\AppData\Local\SeleniumBasic	
 
