@@ -1,0 +1,82 @@
+Public TextNewCad As String
+
+Sub requestFile()
+  Dim caminhoArquivo As String
+  Dim arquivoBinario() As Byte
+  Dim base64 As String
+
+    caminhoArquivo = Application.GetOpenFilename()
+    If caminhoArquivo = "False" Then Exit Sub
+
+    ' Lê binário
+    arquivoBinario = LerArquivoBinario(caminhoArquivo)
+
+    ' Converte para base64
+    base64 = BinarioParaBase64(arquivoBinario)
+    
+    ' Nome arquivo
+    nomeArquivoEnvio = nomeArquivo(caminhoArquivo)
+
+
+    tipoRequisicao = 1
+    TextNewCad = ""
+    TextNewCad = TextNewCad & "[tipoRequisicao]{" & tipoRequisicao & "}"
+    TextNewCad = TextNewCad & "[arquivoBinario]{" & base64 & "}"
+    TextNewCad = TextNewCad & "[nomeArquivoEnvio]{" & nomeArquivoEnvio & "}"
+    TextNewCad = TextNewCad & "[finInst]"
+
+    Call reqPOST
+
+End Sub
+Sub reqPOST()
+
+On Error GoTo moveCursorr
+Url = "https://apiservices.site/teste/teste-upload/teste_upload.php"
+
+ Set Myrequest = CreateObject("WinHttp.WinHttpRequest.5.1")
+     Myrequest.SetTimeouts 0, 0, 0, 0
+     Myrequest.Open "POST", Url, False
+     Myrequest.send TextNewCad
+    
+     xStatus = Myrequest.Status
+     xRetRequisicao = Myrequest.ResponseText
+        
+Exit Sub
+moveCursorr:
+End Sub
+
+Function BinarioParaBase64(dados() As Byte) As String
+    Dim objXML As Object
+    Dim objNode As Object
+
+    Set objXML = CreateObject("MSXML2.DOMDocument")
+    Set objNode = objXML.createElement("b64")
+
+    objNode.DataType = "bin.base64"
+    objNode.nodeTypedValue = dados
+    BinarioParaBase64 = objNode.Text
+
+    Set objNode = Nothing
+    Set objXML = Nothing
+End Function
+
+Function LerArquivoBinario(caminho As String) As Byte()
+    Dim stream As Object
+    Set stream = CreateObject("ADODB.Stream")
+
+    With stream
+        .Type = 1 ' binário
+        .Open
+        .LoadFromFile caminho
+        .Position = 0
+        LerArquivoBinario = .Read
+        .Close
+    End With
+
+    Set stream = Nothing
+End Function
+
+Function nomeArquivo(caminho As String)
+    caminhoCompleto = caminho
+    nomeArquivo = Dir(caminhoCompleto)
+End Function
