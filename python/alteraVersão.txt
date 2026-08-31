@@ -1,0 +1,8 @@
+ALTERNAR VERSÃO DO PYTHON
+> SELECIONE A VERSÃO
+
+> CRIAR O VENV
+py -3.12 -m venv .venv312
+
+> ATIVAR O VENV
+.\.venv312\Scripts\Activate.ps1

@@ -1,0 +1,47 @@
+<style>
+  #caixa {
+    width: 150px;
+    height: 100px;
+    background: royalblue;
+    color: white;
+
+    position: absolute;
+    left: 100px;
+    top: 100px;
+
+    cursor: grab;
+    user-select: none;
+  }
+
+  #caixa:active {
+    cursor: grabbing;
+  }
+</style>
+
+<div id="caixa">Arraste-me</div>
+
+<script>
+  const caixa = document.getElementById("caixa");
+
+  let arrastando = false;
+  let offsetX = 0;
+  let offsetY = 0;
+
+  caixa.addEventListener("mousedown", (e) => {
+    arrastando = true;
+
+    offsetX = e.clientX - caixa.offsetLeft;
+    offsetY = e.clientY - caixa.offsetTop;
+  });
+
+  document.addEventListener("mousemove", (e) => {
+    if (!arrastando) return;
+
+    caixa.style.left = `${e.clientX - offsetX}px`;
+    caixa.style.top = `${e.clientY - offsetY}px`;
+  });
+
+  document.addEventListener("mouseup", () => {
+    arrastando = false;
+  });
+</script>
