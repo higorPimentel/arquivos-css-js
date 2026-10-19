@@ -1,0 +1,42 @@
+Sub PercorrerDiretorios()
+
+    Dim fso As Object
+
+    Set fso = CreateObject("Scripting.FileSystemObject")
+
+    ListarConteudo fso, "C:\Users\admin\Desktop\PROJETOS\PY\ler-pdf-nf\nfs"
+
+    Set fso = Nothing
+
+End Sub
+
+Sub ListarConteudo(ByVal fso As Object, _
+                   ByVal caminho As String)
+
+    Dim pasta As Object
+    Dim arquivo As Object
+    Dim subpasta As Object
+
+    On Error GoTo TrataErro
+
+    Set pasta = fso.GetFolder(caminho)
+
+    ' Listar arquivos da pasta atual
+    For Each arquivo In pasta.Files
+        Debug.Print "Arquivo: " & arquivo.Path
+    Next arquivo
+
+    ' Percorrer todas as subpastas
+    For Each subpasta In pasta.SubFolders
+        Debug.Print "Pasta: " & subpasta.Path
+
+        ListarConteudo fso, subpasta.Path
+    Next subpasta
+
+    Exit Sub
+
+TrataErro:
+    Debug.Print "Erro ao acessar: " & caminho
+    Err.Clear
+
+End Sub
