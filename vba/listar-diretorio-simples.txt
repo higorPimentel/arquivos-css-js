@@ -1,0 +1,17 @@
+Sub LerDiretorio()
+
+    Dim caminho As String
+    Dim arquivo As String
+
+    caminho = ActiveWorkbook.Path
+
+    'arquivo = Dir(caminho & "\*.*")
+    ' SOMENTE UM TIPO DE EXTENSÃO
+    arquivo = Dir(caminho & "\*.jpg*")
+
+    Do While arquivo <> ""
+        Debug.Print arquivo
+        arquivo = Dir()
+    Loop
+
+End Sub

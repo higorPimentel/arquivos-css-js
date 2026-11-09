@@ -1,0 +1,16 @@
+Sub AcrescentarArquivo()
+
+    Dim arquivo As Integer
+    Dim dirFile, fFile As String
+
+    arquivo = FreeFile
+    dirFile = ActiveWorkbook.Path
+    fFile = "arquivos-he.txt"
+
+    Open dirFile & "\" & fFile For Append As #arquivo
+
+    Print #arquivo, "Nova informação"
+
+    Close #arquivo
+
+End Sub
